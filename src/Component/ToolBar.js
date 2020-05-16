@@ -170,26 +170,25 @@ export default class ToolBar extends React.Component {
 
         }
     }
-    handleSizeChange = (e) => { this.props.upSize(e.target.value); resetColor(); };
+    handleSizeChange = (e) => { this.props.upSize(e.target.value); if(!this.props.isRunning){ resetColor()}; };
     handleSpeedChange = (e) => {
-        if (!this.props.isRunning) {
-            this.setState({ speed: (e.target.value) })
-        }
+        this.setState({ speed: (e.target.value) })
+
     };
     render() {
         return (
             <div className="toolbar">
                 <br></br>
                 <br></br>
-                <div style={{position: `fixed` , left: `150px`, top:`30px`, fontFamily: 'Comic Sans MS' }}>Speed</div>
+                <div style={{ position: `fixed`, left: `150px`, top: `30px`, fontFamily: 'Comic Sans MS' }}>Speed</div>
                 <div className="speed">
                     <input type="range" min={1} max={95} value={this.state.speed} onChange={this.handleSpeedChange} />
                 </div>
-                <div style={{position: `fixed` , left: `350px`, top:`30px`, fontFamily: 'Comic Sans MS' }}>Size</div>
+                <div style={{ position: `fixed`, left: `350px`, top: `30px`, fontFamily: 'Comic Sans MS' }}>Size</div>
                 <div className="size">
                     <input type="range" min={5} max={300} step={11} value={this.props.array.length} onChange={this.handleSizeChange} />
                 </div>
-                <div style={{ height: `20vh`, width: `5px`, position: `fixed`, top:`0`, left:`500px`, backgroundColor: `rgb(105,82,199)` }}></div>
+                <div style={{ height: `20vh`, width: `5px`, position: `fixed`, top: `0`, left: `500px`, backgroundColor: `rgb(105,82,199)` }}></div>
                 <div className="buttons">
                     <button onClick={() => this.SelectionSort()} style={{ margin: `40px`, fontFamily: 'Comic Sans MS' }}>SelectionSort</button>
                     <button onClick={() => this.HeapSort()} style={{ margin: `40px`, fontFamily: 'Comic Sans MS' }}>HeapSort</button>
@@ -224,6 +223,6 @@ function resetColor() {
         arrbars[i].style.backgroundColor = 'rgb(163, 241, 225)';
     }
 }
-function getSpeed(speed){
-    return 500 - (500*(speed/100));
+function getSpeed(speed) {
+    return 500 - (500 * (speed / 100));
 }
