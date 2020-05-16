@@ -170,7 +170,7 @@ export default class ToolBar extends React.Component {
 
         }
     }
-    handleSizeChange = (e) => { this.props.upSize(e.target.value); if(!this.props.isRunning){ resetColor()}; };
+    handleSizeChange = (e) => { this.props.upSize(e.target.value);  if(!this.props.isRunning){ resetColor()}; };
     handleSpeedChange = (e) => {
         this.setState({ speed: (e.target.value) })
 
