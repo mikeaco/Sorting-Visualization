@@ -93,20 +93,35 @@ export const quickSort = (array, left, right, animate) => {
 }
 
 function partition(array, left, right, animate) {
-    let piv = right;
+    var ra = Math.floor(Math.random() * (right - left + 1 ) + left);
+    console.log(ra+" ra"+" left: "+left+" right: "+right);
+    console.log(array.length);
+    let piv = ra;
+
+    let swap2 = [piv, right, 1];
+    animate.push(swap2);
+    let temp1 = array[piv];
+    array[piv] = array[right];
+    array[right] = temp1;
+    piv = right;
+
     let part = [piv, 0, 2];
     animate.push(part);
     let i = left - 1;
     for (let j = left; j < right; j++) {
         let track = [i + 1, j, 0];
         animate.push(track);
+        
         if (array[piv] >= array[j]) {
             i++;
+
+            
             let swap = [i, j, 1];
             animate.push(swap);
             let temp = array[i];
             array[i] = array[j];
             array[j] = temp;
+            
 
         }
     }

@@ -37,10 +37,11 @@ export default class SortVis extends React.Component {
             this.setState({
                 arr: createArray(this.state.arr.length)
             });
-        }
-        const arrbars = document.getElementsByClassName('bar');
-        for (let i = 0; i < arrbars.length; i++) {
-            arrbars[i].style.backgroundColor = 'rgb(163, 241, 225)';
+
+            const arrbars = document.getElementsByClassName('bar');
+            for (let i = 0; i < arrbars.length; i++) {
+                arrbars[i].style.backgroundColor = 'rgb(163, 241, 225)';
+            }
         }
     }
     render() {
@@ -61,7 +62,7 @@ export default class SortVis extends React.Component {
                 <div style={{ height: `720px` }}></div>
                 {ret}
                 <button onClick={() => this.resetArray()}>Generate New Array</button>
-                <ToolBar array={this.state.arr} UpIsRunning={this.updateRunning} isRunning={this.state.isRunning} upSize = {this.updateSize} />
+                <ToolBar array={this.state.arr} UpIsRunning={this.updateRunning} isRunning={this.state.isRunning} upSize={this.updateSize} />
             </div>
         )
     }

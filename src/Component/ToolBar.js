@@ -132,6 +132,7 @@ export default class ToolBar extends React.Component {
             var keepArray = this.props.array.slice();
             this.props.UpIsRunning(keepArray, true);
             var animate = [];
+            console.log(this.props.array.length);
             //const javaSorted = this.props.array.slice().sort((a, b) => (a - b));
             const sorted = Algorithms.quickSort(this.props.array, 0, this.props.array.length - 1, animate);
             const anim = async () => {
