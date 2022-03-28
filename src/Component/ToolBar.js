@@ -10,7 +10,7 @@ export default class ToolBar extends React.Component {
         super(props);
         console.log(props);
         this.state = {
-            speed: 50
+            speed: 50,
         }
     }
     SelectionSort() {
@@ -27,9 +27,11 @@ export default class ToolBar extends React.Component {
                     if (animate[i][2] === 0) {
                         await sleep(getSpeed(this.state.speed));
                         arrbars[animate[i][0]].style.backgroundColor = 'rgb(245,117,88)';
-                        arrbars[animate[i][1]].style.backgroundColor = 'rgb(245,117,88)';
                         await sleep(getSpeed(this.state.speed));
                         arrbars[animate[i][0]].style.backgroundColor = 'rgb(163, 241, 225)';
+                        await sleep(getSpeed(this.state.speed));
+                        arrbars[animate[i][1]].style.backgroundColor = 'rgb(245,117,88)';
+                        await sleep(getSpeed(this.state.speed));
                         arrbars[animate[i][1]].style.backgroundColor = 'rgb(163, 241, 225)';
                     }
                     else {
