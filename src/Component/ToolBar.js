@@ -2,6 +2,8 @@ import React from 'react'
 import './ToolBar.css'
 import * as Algorithms from './Algorithms.js'
 import './SortVis'
+import Button from '@mui/material/Button';
+import Slider from '@mui/material/Slider';
 //import SortVis from './SortVis'
 export default class ToolBar extends React.Component {
     constructor(props) {
@@ -183,18 +185,19 @@ export default class ToolBar extends React.Component {
                 <br></br>
                 <div style={{ position: `fixed`, left: `150px`, top: `30px`, fontFamily: 'Comic Sans MS' }}>Speed</div>
                 <div className="speed">
-                    <input type="range" min={1} max={95} value={this.state.speed} onChange={this.handleSpeedChange} />
+                    <Slider min={1} max={95} value={this.state.speed} valueLabelDisplay="auto" onChange={this.handleSpeedChange}></Slider>
+                    {/* <input type="range" min={1} max={95} value={this.state.speed} onChange={this.handleSpeedChange} /> */}
                 </div>
                 <div style={{ position: `fixed`, left: `350px`, top: `30px`, fontFamily: 'Comic Sans MS' }}>Size</div>
                 <div className="size">
-                    <input type="range" min={5} max={300} step={11} value={this.props.array.length} onChange={this.handleSizeChange} />
+                    <Slider min={5} max={300} step={11} value={this.props.array.length} onChange={this.handleSizeChange} valueLabelDisplay="auto"></Slider>
+                    {/* <input type="range" min={5} max={300} step={11} value={this.props.array.length} onChange={this.handleSizeChange} /> */}
                 </div>
-                <div style={{ height: `20vh`, width: `5px`, position: `fixed`, top: `0`, left: `500px`, backgroundColor: `rgb(105,82,199)` }}></div>
                 <div className="buttons">
-                    <button onClick={() => this.SelectionSort()} style={{ margin: `40px`, fontFamily: 'Comic Sans MS' }}>SelectionSort</button>
-                    <button onClick={() => this.HeapSort()} style={{ margin: `40px`, fontFamily: 'Comic Sans MS' }}>HeapSort</button>
-                    <button onClick={() => this.MergeSort()} style={{ margin: `40px`, fontFamily: 'Comic Sans MS' }}>MergeSort</button>
-                    <button onClick={() => this.QuickSort()} style={{ margin: `40px`, fontFamily: 'Comic Sans MS' }}>QuickSort</button>
+                    <Button variant="contained" onClick={() => this.SelectionSort()} style={{ margin: `40px`, fontFamily: 'Comic Sans MS' }}>Selection Sort</Button>
+                    <Button variant="contained" onClick={() => this.HeapSort()} style={{ margin: `40px`, fontFamily: 'Comic Sans MS' }}>HeapSort</Button>
+                    <Button variant="contained" onClick={() => this.MergeSort()} style={{ margin: `40px`, fontFamily: 'Comic Sans MS' }}>MergeSort</Button>
+                    <Button variant="contained" onClick={() => this.QuickSort()} style={{ margin: `40px`, fontFamily: 'Comic Sans MS' }}>QuickSort</Button>
                 </div>
 
             </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import './SortVis.css'
 import ToolBar from './ToolBar';
+import Button from '@mui/material/Button';
 export default class SortVis extends React.Component {
     constructor() {
         super();
@@ -61,7 +62,7 @@ export default class SortVis extends React.Component {
             <div className="container" >
                 <div style={{ height: `720px` }}></div>
                 {ret}
-                <button onClick={() => this.resetArray()}>Generate New Array</button>
+                <Button variant="contained" onClick={() => this.resetArray()}>Generate New Array</Button>
                 <ToolBar array={this.state.arr} UpIsRunning={this.updateRunning} isRunning={this.state.isRunning} upSize={this.updateSize} />
             </div>
         )

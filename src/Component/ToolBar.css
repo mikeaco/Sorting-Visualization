@@ -1,22 +1,25 @@
 .toolbar{
     background-color: rgb(121,115,240);
     width: 100vw;
-    height: 20vh;
+    height: 10vh;
     position: fixed;
     top:0;
 }
 .buttons{
     position: fixed;
     right: 80px;
-    top: 10px;
+    top: 0px;
+
 }
 .speed{
     position: fixed;
     left:100px;
     top: 55px;
+    width: 150px;
 }
 .size{
     position: fixed;
     left:300px;
     top: 55px;
+    width: 150px;
 }
